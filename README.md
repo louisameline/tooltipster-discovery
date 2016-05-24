@@ -1,4 +1,4 @@
-# tooltipster.discovery
+# tooltipster-discovery
 Discovery is a Tooltipster plugin to help browsing through a series of tooltips.
 
 The idea is that if you hover over an element which makes a tooltip appear, and then move to an adjacent element also with a tooltip, there should be no "closing" and "opening" animations. The first tooltip closes and the second one opens immediately. This is useful when you have a row of adjacent elements, and a user wants to "browse" the tooltips of each one.
@@ -15,7 +15,7 @@ Include the plugin file in your page AFTER the Tooltipster file.
     <head>
         ...
         <script type="text/javascript" src="tooltipster/dist/js/tooltipster.bundle.min.js"></script>
-        <script type="text/javascript" src="tooltipster.discovery/tooltipster.discovery.min.js"></script>
+        <script type="text/javascript" src="tooltipster.discovery/tooltipster-discovery.min.js"></script>
     </head>
 </html>
 ```
