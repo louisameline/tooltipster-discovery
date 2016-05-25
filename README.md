@@ -41,9 +41,9 @@ Initialize your tooltips as usual:
 $('.tooltip').tooltipster({...});
 ```
 
-**Note**: this plugin only works for tooltips which use the `'hover'` open trigger.
+> This plugin only works for tooltips which use the `'hover'` open trigger.
 
-Discovery will have created a `group` global method. Use it to create a group based on the `'grouped'` class name:
+Discovery will have created a `group` core method. Use it to create a group based on the `'grouped'` class name:
 ```javascript
 $.tooltipster.group('grouped');
 ```
@@ -58,14 +58,14 @@ $.tooltipster.ungroup('grouped');
 Note
 ----
 
-You might be wondering if you have to declare the Discovery plugin in the options of the tooltips, like so:
+You might be wondering whether you have to declare the Discovery plugin in the options of the tooltips, like so:
 
 ```javascript
 $('.tooltip').tooltipster({
-    plugins: ['sideTip', 'discovery']
+    plugins: ['tooltipster.sideTip', 'laa.discovery']
 });
 ```
 
-The answer is no, because Discovery only creates two global methods, and no instance methods. Plugins only need to be declared in the options of a tooltip when we want it to inherit instance methods from the plugin.
+The answer is no, because Discovery only creates two core methods, and no instance methods. Plugins only need to be declared in the options of a tooltip when we want it to inherit instance methods from the plugin.
 
 Thanks to [@matthew-dean](https://github.com/matthew-dean) for the idea of this plugin!
