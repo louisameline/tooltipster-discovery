@@ -41,7 +41,7 @@ Initialize your tooltips as usual:
 $('.tooltip').tooltipster({...});
 ```
 
-> This plugin only works for tooltips which use the `'hover'` open trigger.
+> This plugin only works for tooltips which use the `'hover'` trigger (specifically the `mouseenter` or `touchstart` open triggers).
 
 Discovery will have created a `group` core method. Use it to create a group based on the `'grouped'` class name:
 ```javascript
