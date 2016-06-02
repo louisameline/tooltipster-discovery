@@ -15,7 +15,7 @@ Include the plugin file in your page AFTER the Tooltipster file.
     <head>
         ...
         <script type="text/javascript" src="tooltipster/dist/js/tooltipster.bundle.min.js"></script>
-        <script type="text/javascript" src="tooltipster.discovery/tooltipster-discovery.min.js"></script>
+        <script type="text/javascript" src="tooltipster-discovery/tooltipster-discovery.min.js"></script>
     </head>
 </html>
 ```
@@ -55,17 +55,6 @@ To restore the normal behavior of the tooltips, just call the `ungroup` method:
 $.tooltipster.ungroup('grouped');
 ```
 
-Note
-----
-
-You might be wondering whether you have to declare the Discovery plugin in the options of the tooltips, like so:
-
-```javascript
-$('.tooltip').tooltipster({
-    plugins: ['tooltipster.sideTip', 'laa.discovery']
-});
-```
-
-The answer is no, because Discovery only creates two core methods, and no instance methods. Plugins only need to be declared in the options of a tooltip when we want it to inherit instance methods from the plugin.
+> You do not have to declare the Discovery plugin in the options of the tooltips, because it works at Tooltipster's core level only, not at the instance level.
 
 Thanks to [@matthew-dean](https://github.com/matthew-dean) for the idea of this plugin!

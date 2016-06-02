@@ -1,6 +1,6 @@
 /**
- * tooltipster.discovery v1.0.0
- * https://github.com/louisameline/tooltipster.discovery/
+ * tooltipster-discovery v1.0.0
+ * https://github.com/louisameline/tooltipster-discovery/
  * Developed by Louis Ameline
  * MIT license
  */
