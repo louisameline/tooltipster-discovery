@@ -22,21 +22,22 @@
 	}
 }(this, function($) {
 	
-	$.tooltipster.plugin({
+	$.tooltipster._plugin({
 		name: 'laa.discovery',
 		core: {
-			_init: function() {
+			__init: function() {
 				
 				var self = this;
 				
-				self.classNames = [];
+				// list of core variables
+				self.__classNames = [];
 				
 				// bind on start events (triggered on mouseenter)
-				$.tooltipster.on('start', function(event) {
+				$.tooltipster._on('start', function(event) {
 					
-					$.each(self.classNames, function(i, className) {
+					$.each(self.__classNames, function(i, className) {
 						
-						if ($(event.instance.elementOrigin()).hasClass(className)) {
+						if (event.instance._$origin.hasClass(className)) {
 							
 							var instances = $.tooltipster.instances('.' + className),
 								open = false,
@@ -84,11 +85,13 @@
 				});
 			},
 			group: function(className) {
-				this.classNames.push(className);
+				this.__classNames.push(className);
 			},
 			ungroup: function(className) {
-				this.classNames = $.grep(this.classNames, function(el, i){ return el !== className });
+				this.__classNames = $.grep(this.__classNames, function(el, i){ return el !== className });
 			}
 		}
 	});
+	
+	return $;
 }));

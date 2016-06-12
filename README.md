@@ -1,5 +1,6 @@
 # tooltipster-discovery
-Discovery is a Tooltipster plugin to help browsing through a series of tooltips.
+
+Discovery is a [Tooltipster](http://iamceege.github.io/tooltipster/) plugin to help browsing through a series of tooltips. MIT license.
 
 The idea is that if you hover over an element which makes a tooltip appear, and then move to an adjacent element also with a tooltip, there should be no "closing" and "opening" animations. The first tooltip closes and the second one opens immediately. This is useful when you have a row of adjacent elements, and a user wants to "browse" the tooltips of each one.
 
