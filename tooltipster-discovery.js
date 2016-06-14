@@ -1,5 +1,5 @@
 /**
- * tooltipster-discovery v1.0.0
+ * tooltipster-discovery v1.0.1
  * https://github.com/louisameline/tooltipster-discovery/
  * Developed by Louis Ameline
  * MIT license
@@ -40,7 +40,7 @@
 						if (event.instance._$origin.hasClass(className)) {
 							
 							var instances = $.tooltipster.instances('.' + className),
-								open = false,
+								openInstances = [],
 								duration;
 							
 							$.each(instances, function(i, instance) {
@@ -49,33 +49,41 @@
 									
 									// if another instance is already open
 									if (instance.status().open) {
-										
-										open = true;
-										
-										// get the current animationDuration
-										duration = instance.option('animationDuration');
-										
-										// close the tooltip without animation
-										instance.option('animationDuration', 0);
-										instance.close();
-										
-										// restore the animationDuration to its normal value
-										instance.option('animationDuration', duration);
+										openInstances.push(instance);
 									}
 								}
 							});
 							
 							// if another instance was open
-							if (open) {
+							if (openInstances.length > 0) {
 								
 								duration = event.instance.option('animationDuration');
 								
-								// open the tooltip without animation
+								// we'll open the tooltip without animation
 								event.instance.option('animationDuration', 0);
-								event.instance.open();
 								
-								// restore the animationDuration to its normal value
-								event.instance.option('animationDuration', duration);
+								// open and close the other open tooltips when it's done
+								event.instance.open(function() {
+									
+									// there should be only one open tooltip at the same time, unless
+									// they were opened by a method call
+									$.each(openInstances, function(i, instance) {
+										
+										// get the current animationDuration
+										duration = instance.option('animationDuration');
+										
+										// we'll close the tooltip without animation
+										instance.option('animationDuration', 0);
+										
+										instance.close();
+										
+										// restore the animationDuration to its normal value
+										instance.option('animationDuration', duration);
+										
+										// restore the animationDuration to its normal value
+										event.instance.option('animationDuration', duration);
+									});
+								});
 								
 								// now that we have opened the tooltip, the hover trigger must be stopped
 								event.stop();
