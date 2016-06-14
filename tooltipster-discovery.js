@@ -1,5 +1,5 @@
 /**
- * tooltipster-discovery v1.0.1
+ * tooltipster-discovery v1.0.2
  * https://github.com/louisameline/tooltipster-discovery/
  * Developed by Louis Ameline
  * MIT license
@@ -79,10 +79,10 @@
 										
 										// restore the animationDuration to its normal value
 										instance.option('animationDuration', duration);
-										
-										// restore the animationDuration to its normal value
-										event.instance.option('animationDuration', duration);
 									});
+									
+									// restore the animationDuration to its normal value
+									event.instance.option('animationDuration', duration);
 								});
 								
 								// now that we have opened the tooltip, the hover trigger must be stopped
