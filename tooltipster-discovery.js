@@ -2,7 +2,7 @@
  * tooltipster-discovery v1.0.2
  * https://github.com/louisameline/tooltipster-discovery/
  * Developed by Louis Ameline
- * MIT license
+ * @license MIT
  */
 (function(root, factory) {
 	if (typeof define === 'function' && define.amd) {
